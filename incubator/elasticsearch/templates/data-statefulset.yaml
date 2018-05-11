@@ -118,7 +118,7 @@ spec:
           name: config
           subPath: logging.yml
 {{- end }}
-{{- if hasPrefix "5." .Values.image.tag }}
+{{- if (hasPrefix "5." .Values.image.tag) or (hasPrefix "6." .Values.image.tag) }}
         - mountPath: /usr/share/elasticsearch/config/log4j2.properties
           name: config
           subPath: log4j2.properties
